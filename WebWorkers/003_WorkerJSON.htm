@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Web Worker</title>
+	<script type="text/javascript">
+		 //создание потока (Web Worker)
+
+		 var worker = new Worker("task2.js");
+
+		 // Привязка обработчика на событие message,которое будет возникать в случае если поток присылает данные
+
+			window.addEventListener("load", function () {
+
+
+     document.getElementById("btnStart").addEventListener("click", startCmd, true);
+      document.getElementById("btnUnknown").addEventListener("click", unknownCmd, true);
+       document.getElementById("btnStop").addEventListener("click", stopCmd, true);
+
+
+}, true);
+   
+
+   function startCmd() {
+   //отоку отправляется объект-команда.	
+   worker.postMessage({ cmd: 'start', msg: 'Hi' });
+   }
+
+   function unknownCmd() {
+   //отоку отправляется объект-команда.	
+   worker.postMessage({ cmd: 'unknown', msg: '???' });
+
+   }
+
+   function stopCmd() {
+   //отоку отправляется объект-команда.	
+   worker.postMessage({ cmd: 'stop', msg: 'Bye' });
+   }
+
+function messageHandler(e) {
+	document.getElementById("output").innerHTML = e.data;
+
+}
+
+</script>
+
+</head>
+<body>
+	  <button id="btnStart">
+		Команда Старт</button>
+
+		<button id="btnUnknown">
+		Команда Unknown</button>
+
+		<button id="btnStop">
+		Команда Стоп</button>
+	<div id="output"></div>
+</body>
+</html>

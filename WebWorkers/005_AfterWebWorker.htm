@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Использование Web Worker</title>
+	<script>
+		window.onload = function () {
+
+			document.getElementById("startButton").onclick =  function () {
+		 //создание потока (Web Worker)
+
+		 var worker = new Worker("fibonachiWorker.js");
+
+		 // Создание обработчика для получения сообщений от потока
+    worker.addEventListener("message", function (e) {
+
+
+     document.getElementById("output").innerHTML += e.data + "<br />";
+ }, false);
+
+
+worker.postMessage("");
+}
+}
+</script>
+
+</head>
+
+<body>
+	<button id="startButton">Start</button>
+	<p id="output"></p>
+
+</body>
+</html>

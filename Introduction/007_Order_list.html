@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Списочные элементы</title>
+</head>
+<body>
+
+	<!--
+		Атрибут start  устанавливает номер ,с которого булет начинаться список
+		"Упорядочивание"через stsrt работает во всех браузерах.
+	-->
+	<ol start="3">
+		<li>HTML и CSS</li>
+		<li>Javascript</li>
+		<li>jQuery</li>
+	</ol>
+
+	<!--
+		Атрибут reserved применяется для управления нумерацией упорядоченных списков и отображает список в обратном порядке
+	-->
+	<ol reversed>
+		<!--Не работает в IE-->
+		<li>HTML и CSS</li>
+		<li>Javascript</li>
+		<li>jQuery</li>
+	</ol>
+
+	<ul reversed>
+		<!--Не работает в IE-->
+		<li>HTML и CSS</li>
+		<li>Javascript</li>
+		<li>jQuery</li>
+	</ul>
+
+	<!--Все современные браузеры поддерживают для li атрибут value.-->
+	<ol>
+		Результат голосования на самую популярную web - технологию.Первое место разделили Javascript и HTML и CSS
+		<li value= "1">HTML и CSS</li>
+		<li value= "1">Javascript</li>
+		<li value= "2">jQuery</li>
+		
+		
+
+	</ol>
+
+	
+</body>
+</html>

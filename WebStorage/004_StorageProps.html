@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Атрибуты и функции Web Storage</title>
+</head>
+<body>
+	<button id="btn1">
+		Очистить хранилище
+	</button>
+	<script type="text/javascript">
+		window.localStorage.setItem("key1", "test1");
+		window.localStorage.setItem("key2", "test2");
+		window.localStorage.setItem("key3", "test3");
+		window.localStorage.setItem("key4", "test4");
+		window.localStorage.setItem("key5", "test5");
+
+		showStopageContent();
+
+		//удаление элемента по ключу
+		window.localStorage.removeItem("key1");
+
+		showStopageContent();
+
+		function showStopageContent() {
+			document.write("Количество пар ключ-значение " + window.localStorag.length + "<br />");
+
+			document.write("Все ключи ив localStorage:<br />")
+
+			for (var i = 0; i < window.localStorage.length; i++) {
+				
+				window[i]
+			}
+		}
+
+
+	</script>
+
+	
+</body>
+</html>

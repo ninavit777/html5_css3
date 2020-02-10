@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>quotes</title>
+	<style>
+		p:before {
+			/* открывающая кавычка перед параграфом*/
+			content: open-quote;
+		}
+		p:after {
+				/* закрывающая кавычка перед параграфом*/
+			content: close-quote;
+		}
+
+		p.hometown:before {
+				/*  перед параграфом с классом hometown не устанавливается кавычка*/
+			content: no-open-quote;
+		}
+
+		p.hometown:after {
+
+			/*  после параграфа с классом hometown не устанавливается кавычка*/
+			content: no-close-quote;
+		}
+
+	</style>
+
+
+</head>
+<body>
+	<p>My name is Homer</p>
+	<p class="hometown">I live in Springfield</p>
+</body>
+</html>
